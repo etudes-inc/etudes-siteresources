@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+/**********************************************************************************
+ * $URL: https://source.etudes.org/svn/apps/siteresources/trunk/siteresources-webapp/webapp/src/webapp/WEB-INF/web.xml $
+ * $Id: web.xml 6168 2013-10-19 01:31:13Z ggolden $
+ ***********************************************************************************
+ *
+ * Copyright (c) 2013 Etudes, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ *
+ **********************************************************************************/
+-->
+
+<web-app id="siteImport" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+    <display-name>etudes-siteresources-webapp</display-name>
+    <description>etudes-siteresources-webapp</description>
+
+	<servlet>
+		<servlet-name>SiteResourcesServlet</servlet-name>
+		<servlet-class>org.etudes.siteresources.webapp.SiteResourcesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>CKConnectorServlet</servlet-name>
+		<servlet-class>org.etudes.siteresources.webapp.CKConnectorServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>AccessServlet</servlet-name>
+		<servlet-class>org.etudes.siteresources.webapp.AccessServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>CKConnectorServlet</servlet-name>
+		<url-pattern>/connector/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>AccessServlet</servlet-name>
+		<url-pattern>/access/*</url-pattern>
+	</servlet-mapping>
+
+</web-app>
